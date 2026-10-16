@@ -1,29 +1,30 @@
-# Solaray Power Innovations Private Limited — Website
+# Solaray Power Innovations Private Limited — Professional Website
 
-A responsive static website for Solaray Power Innovations Private Limited, Agartala, Tripura.
+A polished, responsive static website for Solaray Power Innovations Private Limited, Agartala, Tripura.
 
-## Files
-- `index.html` — website content and sections
-- `style.css` — responsive styling
+## Website files
+- `index.html` — website content and page structure
+- `style.css` — professional responsive design
 - `script.js` — mobile navigation and WhatsApp enquiry form
 - `assets/solaray-logo.png` — supplied company logo
-- `assets/solaray-wordmark.jpg` — supplied company wordmark image
+- `assets/solaray-wordmark.jpg` — supplied wordmark image
 
-## Preview locally
-1. Extract the ZIP file.
-2. Open `index.html` in a modern browser.
-3. Internet is only needed for the optional Google Fonts and map link.
+## Preview
+Extract the ZIP and open `index.html` in a modern browser. Google Fonts require an internet connection; the site otherwise uses local HTML, CSS, JavaScript and image assets.
 
-## Publish free with GitHub Pages
-1. Create or open the repository `solaray-power-innovation` on GitHub.
-2. Upload all files and the `assets` folder (keep the folder structure).
-3. Open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select branch `main` and folder `/ (root)`, then save.
-6. Wait for the published URL shown on the Pages settings screen.
+## Publish with GitHub Pages
+1. Extract this ZIP.
+2. Open your repository: `power/solaray-power-innovation`.
+3. Upload the contents of this folder (not the ZIP itself). Keep the `assets` folder and its files together.
+4. In GitHub, go to **Settings → Pages**.
+5. Under **Build and deployment**, select **Deploy from a branch**.
+6. Select branch `main`, folder `/(root)`, and save.
+7. Wait for GitHub Pages to finish deploying.
 
-## Important checks before publishing
-- Confirm that the company name, phone numbers, office address and opening hours are current.
-- Only publish claims about government approval, MNRE/TSECL authorization, subsidy eligibility or registration after verifying them with the relevant official records. The website uses cautious wording and does not assert these claims as independently verified.
-- The enquiry form opens WhatsApp with a prefilled message to the primary number; it does not save form submissions on a server.
-- This is a static website and does not include a database, online payments or a private admin dashboard.
+Expected URL: `https://power.github.io/solaray-power-innovation/` (available after deployment succeeds).
+
+## Before publishing
+- Confirm the contact numbers, address and business hours.
+- Verify any claims about government approval, MNRE/TSECL authorization, subsidy eligibility or vendor status using current official records.
+- The contact form opens WhatsApp with a prefilled message to `+91 93664 95875`; it does not store submissions or send messages automatically.
+- This is a static website. It does not include a database, payment processing, a login system or an admin dashboard.

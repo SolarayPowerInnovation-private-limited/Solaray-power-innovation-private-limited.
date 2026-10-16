@@ -1,42 +1,30 @@
-const menuToggle = document.getElementById('menuToggle');
-const mainNav = document.getElementById('mainNav');
+const toggle = document.getElementById('navToggle');
+const menu = document.getElementById('navMenu');
 
-menuToggle.addEventListener('click', () => {
-  const open = mainNav.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', String(open));
-  menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+toggle.addEventListener('click', () => {
+  const isOpen = menu.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', String(isOpen));
+  toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
 });
-
-mainNav.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    mainNav.classList.remove('open');
-    menuToggle.setAttribute('aria-expanded', 'false');
-  });
-});
-
+menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+  menu.classList.remove('open');
+  toggle.setAttribute('aria-expanded', 'false');
+}));
 document.getElementById('year').textContent = new Date().getFullYear();
 
-document.getElementById('quoteForm').addEventListener('submit', event => {
+document.getElementById('enquiryForm').addEventListener('submit', event => {
   event.preventDefault();
-  const form = new FormData(event.currentTarget);
-  const name = String(form.get('fullName') || '').trim();
-  const phone = String(form.get('phone') || '').trim();
-  const project = String(form.get('projectType') || '').trim();
-  const location = String(form.get('location') || '').trim();
-  const message = String(form.get('message') || '').trim();
-
-  const text = [
+  const data = new FormData(event.currentTarget);
+  const fields = [
     'Hello Solaray Power Innovations Private Limited,',
     '',
-    'I would like to enquire about solar solutions.',
-    'Name: ' + name,
-    'Phone: ' + phone,
-    'Interested in: ' + project,
-    location ? 'Project location: ' + location : '',
-    message ? 'Details: ' + message : ''
-  ].filter(Boolean).join('\n');
-
-  document.getElementById('formStatus').textContent = 'Opening WhatsApp with your enquiry. Please review and press Send.';
-  const whatsappUrl = 'https://wa.me/919366495875?text=' + encodeURIComponent(text);
-  window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    'I would like to enquire about a solar solution.',
+    'Name: ' + String(data.get('name') || '').trim(),
+    'Phone: ' + String(data.get('phone') || '').trim(),
+    'Interested in: ' + String(data.get('interest') || '').trim(),
+    data.get('location') ? 'Project location: ' + String(data.get('location')).trim() : '',
+    data.get('details') ? 'Details: ' + String(data.get('details')).trim() : ''
+  ].filter(Boolean);
+  document.getElementById('formStatus').textContent = 'Opening WhatsApp. Please review your message and tap Send.';
+  window.open('https://wa.me/919366495875?text=' + encodeURIComponent(fields.join('\n')), '_blank', 'noopener,noreferrer');
 });
