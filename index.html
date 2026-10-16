@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLARAY POWER INNOVATIONS PVT LTD | Rooftop Solar Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo-brand">
+                <img src="images/logo.png" alt="Solaray Power Innovations Logo" class="brand-logo" onerror="this.src='https://via.placeholder.com/60?text=SOLARAY'">
+                <div class="brand-text">
+                    <span class="company-title">SOLARAY POWER</span>
+                    <span class="company-sub">INNOVATIONS PVT LTD</span>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <a href="#home"><i class="fas fa-home"></i> Home</a>
+                <a href="#about"><i class="fas fa-building"></i> About Us</a>
+                <a href="#schemes"><i class="fas fa-solar-panel"></i> PM Surya Ghar</a>
+                <a href="#gallery"><i class="fas fa-images"></i> Field Operations</a>
+                <a href="#calculator"><i class="fas fa-calculator"></i> Solar Calculator</a>
+                <a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="badge"><i class="fas fa-shield-alt"></i> Official Government & Bank Approved Vendor</span>
+            <h1>Powering Your Future With Clean Solar Energy</h1>
+            <p>Empowering households and businesses with high-efficiency rooftop solar installations under the <strong>PM Surya Ghar: Muft Bijli Yojana</strong>.</p>
+            <div class="hero-cta">
+                <a href="#calculator" class="cta-btn primary"><i class="fas fa-calculator"></i> Estimate Savings</a>
+                <a href="#apply" class="cta-btn secondary"><i class="fas fa-edit"></i> Apply for Subsidy</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>Up to ₹85,800</h3>
+                    <p>Government Subsidy</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5.75% p.a.</h3>
+                    <p>SBI Special Finance Rate</p>
+                </div>
+                <div class="stat-item">
+                    <h3>25+ Years</h3>
+                    <p>Solar Panel Lifespan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PM Surya Ghar Scheme Section -->
+    <section id="schemes" class="section scheme-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>PM Surya Ghar: Muft Bijli Yojana</h2>
+                <p>Har Ghar Solar, Har Ghar Bijli — Harness free solar energy for your home</p>
+            </div>
+            <div class="scheme-cards">
+                <div class="scheme-card">
+                    <div class="card-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>Direct Government Subsidy</h3>
+                    <p>Claim up to <strong>₹85,800 subsidy</strong> directly deposited into your bank account under the central government initiative.</p>
+                </div>
+                <div class="scheme-card">
+                    <div class="card-icon"><i class="fas fa-university"></i></div>
+                    <h3>SBI Loan Facility</h3>
+                    <p>Easy financing through <strong>State Bank of India (SBI)</strong> with minimal interest starting at <strong>5.75% per annum</strong>.</p>
+                </div>
+                <div class="scheme-card">
+                    <div class="card-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>TSECL Net-Metering</h3>
+                    <p>Seamless grid synchronization and net-metering integration approved by Tripura State Electricity Corporation Limited.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solar Savings Calculator (Frontend + Backend Sync) -->
+    <section id="calculator" class="section calculator-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Rooftop Solar Savings Calculator</h2>
+                <p>Calculate your system requirements, estimated subsidy, and monthly energy savings</p>
+            </div>
+            <div class="calculator-box">
+                <form id="solarCalcForm">
+                    <div class="form-group">
+                        <label for="monthlyBill">Average Monthly Electricity Bill (₹):</label>
+                        <input type="number" id="monthlyBill" placeholder="e.g. 2500" required min="500">
+                    </div>
+                    <div class="form-group">
+                        <label for="roofArea">Available Roof Area (Sq. Ft.):</label>
+                        <input type="number" id="roofArea" placeholder="e.g. 300" required min="50">
+                    </div>
+                    <button type="submit" class="calc-btn"><i class="fas fa-cogs"></i> Calculate Recommendation</button>
+                </form>
+
+                <div id="calcResults" class="calc-results hidden">
+                    <h3>Your Custom Solar Plan</h3>
+                    <div class="result-grid">
+                        <div class="res-card">
+                            <span class="res-title">Recommended Capacity</span>
+                            <span id="resCapacity" class="res-value">-- kW</span>
+                        </div>
+                        <div class="res-card">
+                            <span class="res-title">Estimated Government Subsidy</span>
+                            <span id="resSubsidy" class="res-value">₹ --</span>
+                        </div>
+                        <div class="res-card">
+                            <span class="res-title">Est. Monthly Savings</span>
+                            <span id="resSavings" class="res-value">₹ --</span>
+                        </div>
+                        <div class="res-card">
+                            <span class="res-title">SBI Loan Monthly EMI (~5.75%)</span>
+                            <span id="resEmi" class="res-value">₹ --</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operational Photo Gallery -->
+    <section id="gallery" class="section gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Field Operations & Customer Help Desks</h2>
+                <p>Our ground team assisting citizens with registration, site inspection, and banking approval</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <img src="images/field_desk_sbi.jpg" alt="Solaray Power SBI Finance Desk" onerror="this.src='https://via.placeholder.com/400x300?text=SBI+Solar+Desk'">
+                    <div class="gallery-info">
+                        <h4>SBI Finance & Registration Desk</h4>
+                        <p>Providing instant application processing and SBI solar loan guidance.</p>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <img src="images/customer_consultation.jpg" alt="Customer Onboarding Desk" onerror="this.src='https://via.placeholder.com/400x300?text=Customer+Consultation'">
+                    <div class="gallery-info">
+                        <h4>Direct Customer Consultation</h4>
+                        <p>Helping household owners select optimal solar inverter & panel configurations.</p>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <img src="images/awareness_drive.jpg" alt="TSECL & PM Surya Ghar Awareness" onerror="this.src='https://via.placeholder.com/400x300?text=Awareness+Drive'">
+                    <div class="gallery-info">
+                        <h4>Community Awareness Campaign</h4>
+                        <p>Educating local residents on MNRE subsidies and net-metering steps.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application / Inquiry Form (Integrated with Node Backend) -->
+    <section id="apply" class="section contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Request Rooftop Solar Installation</h2>
+                <p>Fill in your details for a free site feasibility survey & subsidy consultation</p>
+            </div>
+            <div class="form-wrapper">
+                <form id="solarInquiryForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone / WhatsApp Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="e.g. 9436452537">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="name@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="district">District / City *</label>
+                            <input type="text" id="district" name="district" required placeholder="e.g. West Tripura, Agartala">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="sanctionedLoad">Electricity Connection Consumer ID / Load</label>
+                        <input type="text" id="sanctionedLoad" name="sanctionedLoad" placeholder="Consumer Number or Sanctioned Load (e.g. 2kW)">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Address & Additional Details</label>
+                        <textarea id="message" name="message" rows="3" placeholder="Full address or special requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Submit Solar Application</button>
+                    <div id="formStatus" class="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Verification & Legal Details -->
+    <section id="about" class="section info-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Corporate Profile & Registration Details</h2>
+            </div>
+            <div class="info-cards">
+                <div class="info-box">
+                    <h3><i class="fas fa-file-contract"></i> Company Incorporation</h3>
+                    <ul>
+                        <li><strong>CIN:</strong> U43210TR2026PTC014797</li>
+                        <li><strong>Registration No:</strong> 14797</li>
+                        <li><strong>Date of Inc:</strong> 21 May 2026</li>
+                        <li><strong>ROC:</strong> ROC Guwahati</li>
+                        <li><strong>Status:</strong> Active (Private Limited)</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3><i class="fas fa-map-marker-alt"></i> Addresses & Operations</h3>
+                    <p><strong>Registered Office:</strong> C/O Abhijit Banik, Rajnagar, Gandhigram, Bamutia West, Sadar, West Tripura - 799012</p>
+                    <p style="margin-top:0.8rem;"><strong>Corporate / Operational Office:</strong> South Barjala, Airport Road, Agartala West, Tripura - 799002</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="images/logo.png" alt="Solaray Logo" class="footer-logo">
+                <p><strong>SOLARAY POWER INNOVATIONS PVT LTD</strong><br>Driven By The Sun — Authorised Rooftop Solar Vendor.</p>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 SOLARAY POWER INNOVATIONS PRIVATE LIMITED. All Rights Reserved.</p>
+                <p>Empowering Tripura with Green & Clean Energy.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

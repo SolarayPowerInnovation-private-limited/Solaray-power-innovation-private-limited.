@@ -1,0 +1,21 @@
+{
+  "name": "solaray-power-innovations-website",
+  "version": "1.0.0",
+  "description": "Official Web Application & Lead Management Backend for Solaray Power Innovations Pvt Ltd",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "keywords": [
+    "solar",
+    "pm-surya-ghar",
+    "solaray-power",
+    "tripura"
+  ],
+  "author": "SOLARAY POWER INNOVATIONS PVT LTD",
+  "license": "ISC"
+}
